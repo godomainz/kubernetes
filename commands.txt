@@ -22,4 +22,24 @@ kubectl describe replicaset
 
 kubectl get all
 kubectl get deployments
+kubectl get replicationcontrollers
+kubectl get replicasets
 kubectl describe deployment
+
+kubectl create -f 4_Deployment/deployment-definition.yml
+kubectl create -f 4_Deployment/deployment-definition.yml --record
+
+
+#Rolling updates
+
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
+
+kubectl apply -f deployment-definition.yml
+kubectl apply -f deployment-definition.yml --record
+
+kubectl set image deployment/myapp-deployment $ANYNAME=$IMAGEVALUE
+kubectl set image deployment/myapp-deployment nginx-container=nginx:1.9.1
+
+kubectl rollout undo deployment/myapp-deployment
+
