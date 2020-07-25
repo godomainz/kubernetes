@@ -17,3 +17,5 @@ kubectl scale --replicas=6 -f filename.yml
 
 kubectl scale --replicas=6 $TYPE $NAME
 kubectl scale --replicas=6 replicaset myapp-replicaset
+
+kubectl describe replicaset

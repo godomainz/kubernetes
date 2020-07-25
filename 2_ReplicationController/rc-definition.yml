@@ -8,6 +8,7 @@ metadata:
 
 spec:
   template:
+    # Pod definition
     metadata:
       name: myapp-pod
       labels:
