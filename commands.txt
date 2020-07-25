@@ -1,0 +1,19 @@
+kubectl run nginx --image nginx
+kubectl describe pods
+kubectl describe pod nginx
+kubectl get pods
+kubectl get pods -o wide
+kubectl create -f filename.yml
+
+kubectl delete service kubernetes-bootcamp
+kubectl delete pod kubernetes-bootcamp-6f6656d949-7smv7
+kubectl delete deployment kubernetes-bootcamp
+
+kubectl get replicationcontroller
+kubectl get replicaset
+
+kubectl replace -f filename.yml
+kubectl scale --replicas=6 -f filename.yml
+
+kubectl scale --replicas=6 $TYPE $NAME
+kubectl scale --replicas=6 replicaset myapp-replicaset
