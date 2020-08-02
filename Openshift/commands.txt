@@ -1,0 +1,15 @@
+oc login -u system:admin
+oc get projects
+oc get users
+oc whoami
+oc whoami -t
+
+oc adm policy add-cluster-role-to-user cluster-admin administrator
+
+oc cluster up --routing-suffix=localhost.xip.io --public-hostname=8.8.8.8
+
+oc project my-webapplication
+oc rollout latest simple-webapp-docker
+oc rollout history dc/simple-webapp-docker
+oc rollout describe dc simple-webapp-docker
+oc rollout undo dc simple-webapp-docker
