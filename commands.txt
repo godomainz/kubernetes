@@ -1,3 +1,7 @@
+kubectl cluster-info
+kubectl get nodes
+kubectl get namespaces
+
 kubectl run nginx --image nginx
 kubectl describe pods
 kubectl describe pod nginx
@@ -55,3 +59,30 @@ kubectl create serviceaccount dashboard-admin-sa
 kubectl create clusterrolebinding dashboard-admin-sa --clusterrole=cluster-admin --serviceaccount=default:dashboard-admin-sa
 kubectl get secrets
 kubectl describe secret dashboard-admin-sa-token-kw7vn(type the correct name)
+
+# Calling a service in another namespace
+db-service.dev.svc.cluster.local
+db-service = Service name
+dev = Namespace
+svc = Service
+cluster.local = default domain of kubernetes cluster
+
+# List pods in another namespace
+kubectl get pods --namespace=kube-system
+
+# create pods in another namespace
+kubectl create -f filename.yml --namespace=dev
+
+# create namespace
+kubectl create namespace $NAME
+kubectl create namespace dev
+
+# Switch to a namespace permanently
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+# View pods in all namespaces
+kubectl get pods --all-namespaces
+
+# kubectl shell autocomplete
+source <(kubectl completion bash)
+echo "source <(kubectl completion bash)" >> ~/.bashrc
