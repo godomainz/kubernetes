@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-webapp-color
+spec:
+  containers:
+    - name: simple-webapp-color
+      image: simple-webapp-color
+  serviceAccount: dashboard-sa
+  # automountServiceAccountToken: false Use this if you plan to mount token manually

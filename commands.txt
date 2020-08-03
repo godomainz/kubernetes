@@ -136,3 +136,8 @@ echo -n 'bXlzcWw=' | base64 --decode
 kubectl exec ubuntu-sleeper whoami (depreciated)
 kubectl exec ubuntu-sleeper -- whoami
 kubectl exec -it ubuntu-sleeper -- /bin/bash
+
+# Create Service account
+kubectl create serviceaccount dashboard-sa
+kubectl get serviceaccount
+kubectl describe serviceaccount dashboard-sa
