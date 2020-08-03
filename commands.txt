@@ -101,3 +101,34 @@ kubectl create -f filename.yml
 # View ConfigMaps
 kubectl get configmaps
 kubectl describe configmaps
+
+# Create secrets (Imparetive)
+
+kubectl create secret generic <secret-name> --from-literal=<key>=<value>
+kubectl create secret generic app-secret --from-literal=DB_Host=mysql 
+kubectl create secret generic app-secret --from-literal=DB_Host=mysql --from-literal=DB_User=root --from-literal=DB_password=paswrd
+kubectl create secret generic db-secret --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=password123
+
+
+kubectl create secret generic <secret-name> --from-file=<path-to-file>
+kubectl create secret generic app-secret --from-file=app_secret.properties
+
+
+# Create secrets (Declarative)
+kubectl create -f filename.yml
+
+# View secrets
+kubectl get secrets
+kubectl describe secrets
+kubectl describe secret $SECRET_NAME
+
+kubectl get secret $SECRET_NAME -o yaml
+
+# Use these commands to convert plain text to base64 value
+echo -n 'mysql' | base64
+echo -n 'root' | base64
+echo -n 'paswrd' | base64
+
+# Decode secret
+echo -n 'bXlzcWw=' | base64 --decode
+
