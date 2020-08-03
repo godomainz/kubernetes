@@ -132,3 +132,7 @@ echo -n 'paswrd' | base64
 # Decode secret
 echo -n 'bXlzcWw=' | base64 --decode
 
+# Executing a command in pod
+kubectl exec ubuntu-sleeper whoami (depreciated)
+kubectl exec ubuntu-sleeper -- whoami
+kubectl exec -it ubuntu-sleeper -- /bin/bash
