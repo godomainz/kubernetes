@@ -210,7 +210,7 @@ spec:
         - name: tmp-volume
           emptyDir: {}
       serviceAccount: dashboard-admin-sa
-      serviceAccountName: kubernetes-dashboard
+      serviceAccountName: kdashboard-admin-sa
       nodeSelector:
         "kubernetes.io/os": linux
       # Comment the following tolerations if Dashboard must not be deployed on master
@@ -278,7 +278,7 @@ spec:
             runAsUser: 1001
             runAsGroup: 2001
       serviceAccount: dashboard-admin-sa
-      serviceAccountName: kubernetes-dashboard
+      serviceAccountName: dashboard-admin-sa
       nodeSelector:
         "kubernetes.io/os": linux
       # Comment the following tolerations if Dashboard must not be deployed on master
