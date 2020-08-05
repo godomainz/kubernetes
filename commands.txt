@@ -3,6 +3,7 @@ kubectl get nodes
 kubectl get namespaces
 
 kubectl run nginx --image nginx
+kubectl run mosquito --image nginx
 kubectl describe pods
 kubectl describe pod nginx
 kubectl get pods
@@ -141,3 +142,15 @@ kubectl exec -it ubuntu-sleeper -- /bin/bash
 kubectl create serviceaccount dashboard-sa
 kubectl get serviceaccount
 kubectl describe serviceaccount dashboard-sa
+
+# Taints - Node
+kubectl taint nodes node-name key=value:taint-effect
+
+taint-effect --> NoSchedule | PreferNoSchedule | Noexecute
+
+kubectl taint nodes node1 app=blue:NoSchedule
+kubectl describe node ubuntu | grep Taint
+kubectl taint nodes node01 spray=mortein:NoSchedule
+
+# Deleting a taint on a node
+kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
