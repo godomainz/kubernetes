@@ -157,4 +157,4 @@ kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
 
 # Lable Node
 kubectl label nodes <node-name> <label-key>=<label-value>
-kubectl label nodes node1 size=Large
+kubectl label nodes node1 color=blue
