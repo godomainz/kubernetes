@@ -154,3 +154,7 @@ kubectl taint nodes node01 spray=mortein:NoSchedule
 
 # Deleting a taint on a node
 kubectl taint nodes master node-role.kubernetes.io/master:NoSchedule-
+
+# Lable Node
+kubectl label nodes <node-name> <label-key>=<label-value>
+kubectl label nodes node1 size=Large
