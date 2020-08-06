@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red
+  labels:
+    name: red
+
+spec:
+  template:
+    # Pod definition
+    metadata:
+      name: red
+      labels:
+        name: red
+    spec:
+      containers:
+        - name: red
+          image: nginx
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: node-role.kubernetes.io/master
+                  operator: Exists # In | NotIn | Exists (Check documentation)
+  replicas: 3
+  selector:
+    matchLabels:
+      name: red
