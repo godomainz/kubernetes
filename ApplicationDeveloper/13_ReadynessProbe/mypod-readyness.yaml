@@ -6,7 +6,9 @@ spec:
   containers:
   - name: simple-webapp-1
     image: kodekloud/webapp-delayed-start
-    readinessProbe:
+    readinessProbe: # Check if app is ready to serve traffic
         httpGet:
          path: /live
          port: 8080
+        initialDelaySeconds: 50
+        periodSeconds: 5
