@@ -162,3 +162,7 @@ kubectl label nodes node1 color=blue
 
 kubectl create deployment blue --image=nginx
 kubectl scale deployment blue --replicas=6
+
+kubectl describe pod -n elastic-stack
+kubectl -n elastic-stack exec -it app cat /log/app.log
+kubectl get pod simple-webapp-2 -o yaml > mypod.yaml
