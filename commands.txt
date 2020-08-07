@@ -175,3 +175,7 @@ kubectl logs webapp-1
 
 kubectl logs -f $POD_NAME $CONTAINE_RNAME
 kubectl logs -f webapp-2 simple-webapp
+
+# Monitoring
+kubectl top node
+kubectl top pod
