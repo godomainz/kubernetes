@@ -166,3 +166,12 @@ kubectl scale deployment blue --replicas=6
 kubectl describe pod -n elastic-stack
 kubectl -n elastic-stack exec -it app cat /log/app.log
 kubectl get pod simple-webapp-2 -o yaml > mypod.yaml
+
+
+#Logging
+
+kubectl logs $CONTAINER_NAME
+kubectl logs webapp-1
+
+kubectl logs -f $POD_NAME $CONTAINE_RNAME
+kubectl logs -f webapp-2 simple-webapp
