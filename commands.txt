@@ -205,6 +205,7 @@ kubectl get pod simple-webapp-2 -o yaml > mypod.yaml
 kubectl logs $CONTAINER_NAME
 kubectl logs webapp-1
 
+kubectl logs -f $POD_NAME
 kubectl logs -f $POD_NAME $CONTAINE_RNAME
 kubectl logs -f webapp-2 simple-webapp
 
