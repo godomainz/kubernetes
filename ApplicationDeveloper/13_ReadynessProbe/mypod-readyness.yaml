@@ -12,3 +12,5 @@ spec:
          port: 8080
         initialDelaySeconds: 50
         periodSeconds: 5
+        failureThreshold: 8 # Normally probe will stop after 3 attemps. this can increase number of atempts
+        

@@ -12,3 +12,4 @@ spec:
          port: 8080
         initialDelaySeconds: 80 # This is important for livelyness pod. If this this is too lower kubernetes will think app already crashed and will keep restarting the app
         periodSeconds: 1
+        failureThreshold: 8 # Normally probe will stop after 3 attemps. this can increase number of atempts
