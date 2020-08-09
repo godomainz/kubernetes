@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registry-deployment
+  labels:
+    name: registry-deployment
+
+spec:
+  template:
+    # Pod definition
+    metadata:
+      name: registry
+      labels:
+        name: registry
+        
+    spec:
+      volumes:
+      - name: registry-pv-claim
+        persistentVolumeClaim:
+          claimName: registry-pv-claim
+      containers:
+        - name: registry
+          image: registry
+  replicas: 1
+  selector:
+    matchLabels:
+      name: registry
