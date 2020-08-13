@@ -217,3 +217,8 @@ kubectl top pod
 kubectl get pods --selector app=App1
 kubectl get all --selector env=prod
 kubectl get pod --selector env=prod,bu=finance,tier=frontend
+
+# Jobs
+kubectl create -f job-definition.yaml
+kubectl get jobs
+kubectl delete job $JOB_NAME
