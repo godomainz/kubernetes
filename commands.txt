@@ -249,3 +249,7 @@ kubectl expose deployment -n ingress-space ingress-controller --type=NodePort --
 
 # Persistant volumes
 kubectl get persistantvolume
+
+# Persistant volume claim
+kubectl get persistantvolumeclaim
+kubectl delete persistantvolumeclaim NAME
