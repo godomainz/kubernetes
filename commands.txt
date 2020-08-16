@@ -248,8 +248,8 @@ kubectl get roles,rolebindings --namespace ingress-space
 kubectl expose deployment -n ingress-space ingress-controller --type=NodePort --port=80 --name=ingress --dry-run -o yaml >ingress.yaml
 
 # Persistant volumes
-kubectl get persistantvolume
+kubectl get pv
 
 # Persistant volume claim
-kubectl get persistantvolumeclaim
-kubectl delete persistantvolumeclaim NAME
+kubectl get pvc
+kubectl delete pvc NAME
