@@ -226,6 +226,12 @@ kubectl delete job $JOB_NAME
 # CronJob
 kubectl get cronjobs
 
+# Network policies
+kubectl get networkpolicy
+kubectl describe networkpolicy
+
+
+
 # Ingress
 kubectl describe ingress ingress-wear-watch
 
