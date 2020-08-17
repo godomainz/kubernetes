@@ -32,5 +32,5 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      type: wordpress
+      name: wordpress
   
