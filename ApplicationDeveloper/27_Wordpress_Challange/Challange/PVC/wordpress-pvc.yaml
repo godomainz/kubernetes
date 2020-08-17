@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-persistant-storage
+spec:
+  accessModes:
+    - ReadWriteMany # ReadOnlyMany | ReadWriteOnce | ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  
