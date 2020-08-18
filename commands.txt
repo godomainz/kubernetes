@@ -264,3 +264,15 @@ kubectl config set-context --current --namespace=<insert-namespace-name-here>
 kubectl config view --minify | grep namespace:
 
 kubectl get pods --all-namespaces
+
+# General commands
+systemctl daemon-reload
+systemctl restart kubelet
+kubectl cluster-info
+kubectl version
+
+# enabling PodPresets
+sudo vim /etc/kubernetes/manifests/kube-apiserver.yaml
+add/edit these lines and save
+- --enable-admission-plugins=NodeRestriction,PodPreset
+- --runtime-config=settings.k8s.io/v1alpha1=true
