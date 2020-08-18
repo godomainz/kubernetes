@@ -276,3 +276,6 @@ sudo vim /etc/kubernetes/manifests/kube-apiserver.yaml
 add/edit these lines and save
 - --enable-admission-plugins=NodeRestriction,PodPreset
 - --runtime-config=settings.k8s.io/v1alpha1=true
+
+# PodPresets
+kubectl get podpresets
