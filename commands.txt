@@ -253,3 +253,6 @@ kubectl get pv
 # Persistant volume claim
 kubectl get pvc
 kubectl delete pvc NAME
+
+# Troubleshoot
+https://stackoverflow.com/questions/34878574/kubernetes-mysql-chown-operation-not-permitted
