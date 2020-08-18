@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    name: mysql
+
+spec:
+  template:
+    # Pod definition
+    metadata:
+      name: mysql
+      labels:
+        name: mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-persistent-storage
+          env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+                secretKeyRef:
+                  name: mysql-pass
+                  key: password
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-persistent-storage
+  
+  replicas: 1
+  selector:
+    matchLabels:
+      name: mysql
+  
