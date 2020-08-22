@@ -279,3 +279,6 @@ add/edit these lines and save
 
 # PodPresets
 kubectl get podpresets
+
+# Auto scaling
+kubectl get hpa
