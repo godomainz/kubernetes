@@ -282,3 +282,29 @@ kubectl get podpresets
 
 # Auto scaling
 kubectl get hpa
+
+# Postgres Operator
+https://github.com/CrunchyData/postgres-operator
+
+Install the pgo Client
+curl https://raw.githubusercontent.com/CrunchyData/postgres-operator/v4.4.1/installers/kubectl/client-setup.sh > client-setup.sh
+chmod +x client-setup.sh
+./client-setup.sh
+
+Before running pgo create cluster create command run PersistantVolumeClaim files --> postgres-operator-pvc.yaml,postgres-operator-pvc-cluster.yaml,postgres-operator-pvc-repo.yaml
+
+pgo create cluster mycluster --namespace pgo
+created cluster: mycluster
+workflow id: 38dd13e0-4082-44d8-b296-b721d51297e2
+database name: mycluster
+users:
+	username: testuser password: U6cYxi/PPJ-|/T57zX.iSp4w
+
+pgo delete cluster mycluster --namespace pgo
+
+pgo show cluster all
+
+pgo show cluster --all --namespace pgo
+
+
+

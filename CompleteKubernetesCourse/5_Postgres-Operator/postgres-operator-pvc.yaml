@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgress-operator-storage
+  namespace: pgo
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany # ReadOnlyMany | ReadWriteOnce | ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

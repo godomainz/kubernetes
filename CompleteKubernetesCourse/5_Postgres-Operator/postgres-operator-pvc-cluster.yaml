@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mycluster
+  namespace: pgo
+spec:
+  storageClassName: managed-nfs-storage
+  accessModes:
+    - ReadWriteMany # ReadOnlyMany | ReadWriteOnce | ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
