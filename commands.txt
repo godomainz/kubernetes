@@ -306,5 +306,14 @@ pgo show cluster all
 
 pgo show cluster --all --namespace pgo
 
+# Istio getting started
+https://istio.io/latest/docs/setup/getting-started/
 
 
+# Virtual Services
+kubectl get vs
+kubectl get virtualservices
+
+# Destination Rules
+kubectl get destinationrules
+kubectl get dr
