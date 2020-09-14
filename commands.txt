@@ -318,3 +318,7 @@ kubectl get virtualservices
 # Destination Rules
 kubectl get destinationrules
 kubectl get dr
+
+kubectl api-resources
+kubectl cluster-info
+kubectl get apiservices
