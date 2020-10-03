@@ -307,6 +307,21 @@ pgo show cluster all
 
 pgo show cluster --all --namespace pgo
 
+
+# Networking - Switching and Routing commands
+ip link
+ip addr add 192.168.1.10/24 dev eth0
+route
+ip route add 192.1668.2.0/24 via 192.168.1.1
+ip route add default via 192.168.2.1
+cat /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+cat /etc/sysctl.conf
+echo net.ipv4.ip_forward=1 > /etc/sysctl.conf
+
+
+
 # Istio getting started
 https://istio.io/latest/docs/setup/getting-started/
 
@@ -322,3 +337,4 @@ kubectl get dr
 kubectl api-resources
 kubectl cluster-info
 kubectl get apiservices
+
