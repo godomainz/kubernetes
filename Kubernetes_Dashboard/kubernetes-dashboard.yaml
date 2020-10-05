@@ -269,6 +269,7 @@ spec:
       annotations:
         seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
     spec:
+      hostNetwork: true
       containers:
         - name: dashboard-metrics-scraper
           image: kubernetesui/metrics-scraper:v1.0.4
