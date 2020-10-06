@@ -388,6 +388,14 @@ iptables -t nat -A PREROUTING --dport 80 --to-destination 192.168.15.2:80 -j DNA
 iptables -nvL -t nat
 ifconfig -a | grep -Po 'ether \K.*$'
 
+cat /proc/sys/net/ipv4/ip_forward
+netstat -plnt
+arp node01
+ip route show default
+kubectl get nodes -o wide
+netstat -anp | grep etcd
+
+
 # Istio getting started
 https://istio.io/latest/docs/setup/getting-started/
 
