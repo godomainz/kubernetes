@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-kubernetes-dashboard
+spec:
+ rules:
+   - http:
+       paths:
+          - path: /dashboard
+            backend:
+              serviceName: kubernetes-dashboard
+              servicePort: 443
