@@ -5,7 +5,9 @@ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboar
 
 kubectl proxy
 kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='.*'
-kubectl proxy --address="192.168.0.105" -p 8001 --accept-hosts='^*$'
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$'
+kubectl proxy --address="192.168.111.134" -p 8001 --accept-hosts='^*$'
+kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' --kubeconfig=admin.kubeconfig
 
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 

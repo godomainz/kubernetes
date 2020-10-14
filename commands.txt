@@ -394,6 +394,18 @@ arp node01
 ip route show default
 kubectl get nodes -o wide
 netstat -anp | grep etcd
+sudo sysctl net.bridge.bridge-nf-call-iptables=1
+
+ip addr show weave
+
+iptables -L -t net | grep db-service
+cat /var/log/kube-proxy.log
+
+
+ps -aux | grep kubelet
+
+kubectl -n kube-system describe deployments.apps coredns | grep -A2 Args | grep Corefile
+kubectl describe configmap coredns -n kube-system
 
 
 # Istio getting started
