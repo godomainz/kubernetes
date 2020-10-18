@@ -407,6 +407,7 @@ ps -aux | grep kubelet
 kubectl -n kube-system describe deployments.apps coredns | grep -A2 Args | grep Corefile
 kubectl describe configmap coredns -n kube-system
 
+kubectl -n kube-system get ep kube-dns
 
 # Istio getting started
 https://istio.io/latest/docs/setup/getting-started/
