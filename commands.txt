@@ -426,3 +426,9 @@ kubectl cluster-info
 kubectl get apiservices
 kubectl get apiservice v1beta1.metrics.k8s.io -o yaml
 
+#DaemonSets
+kubectl get daemonsets --all-namespaces
+kubectl get ds --all-namespaces
+
+kubectl -n kube-system get pods -o wide | grep proxy
+kubectl -n kube-system describe ds weave-net | grep -i image
