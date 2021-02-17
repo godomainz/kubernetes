@@ -11,3 +11,5 @@ kubectl proxy --address='0.0.0.0' --port=8001 --accept-hosts='^*$' --kubeconfig=
 
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
+ssh -L 8001:localhost:8001 <user@server-ip>
+
